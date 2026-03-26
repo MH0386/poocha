@@ -1,15 +1,16 @@
-{% import "partials/externals_macros.html" as externals %}
-{% extends "base.html" %}
-
-{% block content %}
+{% import "partials/externals_macros.html" as externals %} {% extends
+"base.html" %} {% block content %}
 <article class="card">
     <div class="project-header">
         <div>
             <h1>
                 {% if page.extra.image %}
-                <img src="{{ page.extra.image }}" alt="{{ page.title }} image" class="project-image">
-                {% endif %}
-                {{ page.title }}
+                <img
+                    src="{{ page.extra.image }}"
+                    alt="{{ page.title }} image"
+                    class="project-image"
+                />
+                {% endif %} {{ page.title }}
             </h1>
             {% if page.description %}
             <div class="project-desc">{{ page.description }}</div>
@@ -18,16 +19,18 @@
         {% if page.extra.externals %}
         <div class="external-icons">
             {% for name, value in page.extra.externals %}
-            <a href="{{ value }}" target="_blank" rel="noopener noreferrer me"
-                title="{{ externals::display_name(name=name) | trim }}">
+            <a
+                href="{{ value }}"
+                target="_blank"
+                rel="noopener noreferrer me"
+                title="{{ externals::display_name(name=name) | trim }}"
+            >
                 {{ externals::icon(name=name) }}
             </a>
             {% endfor %}
         </div>
         {% endif %}
     </div>
-    <div>
-        {{ page.content | safe }}
-    </div>
+    <div>{{ page.content | safe }}</div>
 </article>
 {% endblock %}

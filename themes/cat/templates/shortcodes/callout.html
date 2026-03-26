@@ -1,6 +1,5 @@
 <div class="callout {{ type | default(value='note') }}">
     {% if title %}
     <div class="callout-header">{{ title }}</div>
-    {% endif %}
-    {{- body | markdown | safe -}}
+    {% endif %} {{- body | markdown | safe -}}
 </div>

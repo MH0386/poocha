@@ -1,24 +1,24 @@
-{% import "partials/externals_macros.html" as externals %}
-{% extends "base.html" %}
-{% block content %}
+{% import "partials/externals_macros.html" as externals %} {% extends
+"base.html" %} {% block content %}
 <div class="profile">
     <div class="profile-inner">
         <h1>{{ config.author }}</h1>
         {% if config.extra.externals_order %}
         <div class="external-icons">
-            {% for name in config.extra.externals_order %}
-            {% if config.extra.externals[name] %}
-            <a href="{{ config.extra.externals[name] }}" target="_blank" rel="noopener noreferrer me"
-                title="{{ externals::display_name(name=name) | trim }}">
+            {% for name in config.extra.externals_order %} {% if
+            config.extra.externals[name] %}
+            <a
+                href="{{ config.extra.externals[name] }}"
+                target="_blank"
+                rel="noopener noreferrer me"
+                title="{{ externals::display_name(name=name) | trim }}"
+            >
                 {{ externals::icon(name=name) }}
             </a>
-            {% endif %}
-            {% endfor %}
+            {% endif %} {% endfor %}
         </div>
         {% endif %}
-        <div class="profile-summary">
-            {{ section.content | safe }}
-        </div>
+        <div class="profile-summary">{{ section.content | safe }}</div>
     </div>
 </div>
 {% endblock %}

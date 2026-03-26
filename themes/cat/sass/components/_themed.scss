@@ -16,32 +16,38 @@
     transition: opacity 0.2s ease;
 }
 
-// Show light by default, hide dark
+// Default to dark theme
 .themed-img--light {
-    opacity: 1;
+    opacity: 0;
 }
 
 .themed-img--dark {
-    opacity: 0;
-}
-
-// In dark theme, hide light and show dark
-[data-theme="dark"] .themed-img--light {
-    opacity: 0;
-}
-
-[data-theme="dark"] .themed-img--dark {
     opacity: 1;
+}
+
+// In light theme, show light and hide dark
+[data-theme="light"] .themed-img--light {
+    opacity: 1;
+}
+
+[data-theme="light"] .themed-img--dark {
+    opacity: 0;
 }
 
 .themed-inline {
     display: none;
 }
 
+// Default to dark theme icon
+.themed-inline.dark {
+    display: inline;
+}
+
+// In light theme, show light and hide dark icon
 [data-theme="light"] .themed-inline.light {
     display: inline;
 }
 
-[data-theme="dark"] .themed-inline.dark {
-    display: inline;
+[data-theme="light"] .themed-inline.dark {
+    display: none;
 }
